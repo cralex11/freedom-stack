@@ -33,3 +33,4 @@ public/tinymce/
 node_modules/.pnpm/tinymce@*/node_modules/tinymce
 
 .idea/
+.history/

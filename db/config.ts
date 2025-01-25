@@ -66,12 +66,31 @@ const Verification = defineTable({
   }
 });
 
+const ArtworksTable = defineTable({
+  columns: {
+    id: column.number({ primaryKey: true }),
+    title: column.text(),
+    artist: column.text(),
+    description: column.text(),
+    price: column.number(),
+    imageUrl: column.text(),
+    category: column.text(), // 'painting', 'sketch', 'print'
+    dimensions: column.text(),
+    medium: column.text(),
+    year: column.number(),
+    slug: column.text({ unique: true }),
+    status: column.text(), // 'available', 'sold', 'reserved'
+    featured: column.boolean({ default: false })
+  }
+});
+
 export default defineDb({
   tables: {
     Posts,
     User,
     Session,
     Account,
-    Verification
+    Verification,
+    ArtworksTable
   }
 });
